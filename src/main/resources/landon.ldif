@@ -1,0 +1,50 @@
+dn: dc=georgialamni,dc=com
+objectclass: top
+objectclass: domain
+objectclass: extensibleObject
+dc: georgialamni
+o: GeorgiaLamni
+
+dn: ou=people,dc=georgialamni,dc=com
+objectclass: top
+objectClass: organizationalUnit
+ou: people
+
+dn: ou=groups,dc=georgialamni,dc=com
+objectClass: top
+objectClass: organizationalUnit
+ou: groups
+
+dn: uid=fpmoles,ou=people,dc=georgialamni,dc=com
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+cn: Georgia Lamni
+sn: Lamni
+givenName: Georgia
+mail: fpmoles@georgialamni.com
+uid: fpmoles
+userPassword: {SHA}W6ph5Mm5Pz8GgiULbPgzG37mj9g=
+
+dn: uid=jdoe,ou=people,dc=georgialamni,dc=com
+objectClass: inetOrgPerson
+cn: John Doe
+sn: Doe
+givenName: John
+mail: jdoe@georgialamni.com
+uid: jdoe
+userPassword: {SHA}iEPX+SQWIR3p67lj/0zigSWTKHg=
+
+dn: cn=admin,ou=groups,dc=georgialamni,dc=com
+objectclass: top
+objectclass: groupOfUniqueNames
+cn: admins
+uniqueMember: uid=fpmoles,ou=people,dc=georgialamni,dc=com
+
+dn: cn=user,ou=groups,dc=georgialamni,dc=com
+objectclass: top
+objectclass: groupOfUniqueNames
+cn: users
+uniqueMember: uid=fpmoles,ou=people,dc=georgialamni,dc=com
+uniqueMember: uid=jdoe,ou=people,dc=georgialamni,dc=com
